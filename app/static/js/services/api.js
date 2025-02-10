@@ -15,14 +15,12 @@ export async function pesquisarExoplanetaPorNome(nome) {
 export function filtrarExoplaneta(offset, filtro) {
     return fetch(`/filtrarExoplaneta?offset=${offset}&filter=${filtro}`)
         .then(response => {
-            console.log('Fetch response:', response);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.json();
         })
-        .then(data => {
-            console.log('Data fetched:', data);
+        .then(data => {;
             return data;
         })
         .catch(error => {
