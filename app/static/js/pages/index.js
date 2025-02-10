@@ -261,10 +261,10 @@ async function pesquisarExoplaneta() {
                 tabelaExoplanetas.appendChild(row);
             });
         }
-        else {
+        /*else {
             console.log(data.msg);
             alert(data.msg);
-        }
+        }*/
         
         document.getElementById('prev').classList.add('disabled-btn');
         document.getElementById('reset').classList.add('disabled-btn');

@@ -1,13 +1,11 @@
 export async function buscarExoplanetaPorNome(nome) {
     const response = await fetch(`/exoplanet/${nome}`).then(response => response.json());
-    console.log(response)
     return response;
 }
 
 
 export async function pesquisarExoplanetaPorNome(nome) {
     const response = await fetch(`/search/${nome}`).then(response => response.json());
-    console.log(response)
     return response;
 }
 

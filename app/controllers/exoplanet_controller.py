@@ -20,6 +20,7 @@ def buscar_exoplaneta(nome):
 @exoplanet_bp.route(f'/search/<nome>', methods=['GET'])
 def pesquisar_exoplaneta(nome):
     if nome:
+        print(nome)
         exoplanet = ExoplanetModel()
         response = exoplanet.pesquisar_por_exoplaneta(nome)
 
