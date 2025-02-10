@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/pages/index.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/components/star.css')}}">
+  <link rel="icon", href="{{url_for('static', filename='assets/icons/icon_astro_planet.png')}}" type="image/x-icon">
+  <title>Astro Planet</title>
+  <script src="{{url_for('static', filename='js/pages/index.js')}}" type="module" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="{{url_for('static', filename='assets/images/logo/logo_2_astro_planet.svg')}}" alt="astro_planet">
+    </nav>
+  </header>
+  <main>
+    <div class="div-main">
+      <div class="div-filho">
+        <div class="div-neto">
+          <div class="info" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+            <h1 style="margin-bottom: 10px;">Pesquisar</h1>
+            <input id="input-name-exoplanet" type="text" placeholder="Digite o nome do exoplaneta">
+          </div>
+          <div class="info" style="display: flex; align-items: center; justify-content: center;">
+            <button id="btn-pesquisar" style="width: 200px; height: 40px; cursor: pointer; border-radius: 5px; border: none; font-weight: bold;">Buscar</button>
+          </div>
+        </div>
+        <div class="div-neto">
+          <div class="info" style="justify-content: space-between; align-items: center;">
+            <h1 style="color: #BBEEEE; font-size: 20px;">Exoplanetas</h1>
+            <button id="btn-atualizar" style="font-weight: bold; width: 70px; height: 30px; border: none; cursor: pointer; border-radius: 5px;">Atualizar</button>
+          </div>
+        </div>
+        <div id="filter-bar" class="filter-bar">
+        </div>
+        <div class="div-neto">
+          <div class="info">
+            <table id="tabela" style="table-layout: fixed; border-collapse: collapse; color: #BBEEEE; width: 100%; height: 325px; text-align: center;">
+              <thead>
+                <th class="tab-coluna-mobile">Exoplaneta</th>
+                <th>Massa (M&#8853;)</th>
+                <th>Distância(al)</th>
+              </thead>
+              <tbody id="tab-exoplanet" style="opacity: 0;" >
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="div-neto">
+          <div class="info" style="justify-content: end; align-items: center;">
+            <div>
+              <span style="font-size: 11px;">Exoplanetas:</span>
+              <span style="font-size: 11px; color: #BBEEEE;" id="current-page"></span>
+            </div>            
+            <button class="botao-next-prev" id="reset" type="button" class="disabled-btn"><<</button>
+            <button class="botao-next-prev" id="prev" type="button" class="disabled-btn">< Prev</button>
+            <button class="botao-next-prev" id="next" type="button">Next ></button>
+          </div>
+        </div>
+        <div class="div-neto">
+          <div style="display: flex; justify-content: space-between;">
+            <div class="info-div">
+              <div class="info" style="align-items: center;">
+                <img id="img-exoplanet" src="{{url_for('static', filename='assets/icons/icons8-geografia-100.png')}}" alt="" style="height: 40px; width: 40px; margin-right: 5px;">
+                <h2 id="planet-name">Exoplaneta</h2>
+              </div>
+              <div class="info">
+                <div>Massa: <span id="pl-massa" class="valores-do-planeta">---</span></div>
+              </div>
+              <div class="info">
+                <div>Raio: <span id="pl-raio" class="valores-do-planeta">---</span></div>
+              </div>
+              <div class="info">
+                <div>Densidade: <span id="pl-densidade" class="valores-do-planeta">---</span></div>
+              </div>
+              <div class="info">
+                <div>Periodo orbital: <span id="pl-periodo-orbital" class="valores-do-planeta">---</span></div>
+              </div>
+              <div class="info">
+                <div>Ano descoberta: <span id="pl-ano-descoberta" class="valores-do-planeta">---</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-neto" style="color: #BBEEEE;">
+          <div style="display: flex; align-items: center; width: 100%; box-sizing: border-box; padding: 2px;">
+            <div id="star-img" class="star-img"></div>
+            <div>
+              <h2 id="star-name">Estrela</h2>
+            </div>
+          </div>
+          <div class="info-star-mobile" style="display: flex; justify-content: space-between;">
+            <div class="info-div">
+              <div class="info">
+                <div>Ascensão reta: <span id="star-ascensao" class="valores-da-estrela">---</span></div>
+              </div>
+              <div class="info">
+                <div>Declinação: <span id="star-declinacao" class="valores-da-estrela">---</span></div>
+              </div>
+              <div class="info">
+                <div>Paralax: <span id="star-paralax" class="valores-da-estrela">---</span></div>
+              </div>
+              <div class="info">
+                <div>Distância: <span id="star-distancia" class="valores-da-estrela">---</span></div>
+              </div>
+              <div class="info">
+                <div>Luminosidade: <span id="star-luminosidade" class="valores-da-estrela">---</span></div>
+              </div>
+            </div>
+            <div class="info-div">
+              <div class="info">
+                <div>Massa: <span id="star-massa" class="valores-da-estrela">---</span></div>
+              </div>
+              <div class="info">
+                <div>Raio: <span id="star-raio" class="valores-da-estrela">---</span></div>
+              </div>
+              <div class="info">
+                <div>Temperatura: <span id="star-temperatura" class="valores-da-estrela">---</span></div>
+              </div>
+              <div class="info">
+                <div>Tipo Espectral: <span id="tipo-espectral" class="valores-da-estrela">---</span></div>
+              </div>
+              <div class="info">
+                <div>Zona Habitavel: <span id="star-zona-habitavel" class="valores-da-estrela">---</span></div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="div-neto" style="display: flex; align-items: center; justify-content: center; font-size: 12px; color: #BBEEEE; border: none;">
+      <span>Desenvolvidor por @yLith | 2025 </span>
+    </div>
+  </footer>
+</body>
+</html>

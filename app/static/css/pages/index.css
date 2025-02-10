@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import '../global/global.css';
+@import '../components/estrelas.css';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body { 
+  font-family: 'Montserrat';
+  display: flex; 
+  flex-direction: column;
+  min-height: 100dvh;
+  transition: opacity 0.5s ease-in-out;
+}
+
+main {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  /*background-image: url('../../assets/images/background/bg_galaxy_small.webp');
+  background-size: cover;
+  background-position: center center;*/
+  background: radial-gradient(ellipse at center, #1b2735, #090a0f);
+  flex: 1;
+}
+
+input {
+    font-family: 'Montserrat';
+    color: var(--cor-1);
+    width: 90%; 
+    border: none; 
+    height: 30px; 
+    padding: 5px; 
+    box-sizing: border-box; 
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.div-main {
+  width: 900px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.5s ease-in-out;
+  
+}
+
+.div-filho {
+  background-color: rgba(4, 18, 21, 0.5); 
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 5px;
+  
+}
+
+.div-neto {
+  border: solid 1px #51C4B4;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 5px;
+  margin-bottom: 5px;
+  color: #BBEEEE;
+}
+
+.botao-next-prev {
+  width: 70px;
+  height: 30px;
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.div-neto button.disabled-btn { 
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.info-div {
+  width: 100%;
+}
+
+.info {
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2px;
+  display: flex;
+
+}
+
+th {
+  background-color: #51C4B4;
+  color: #041215; 
+}
+
+td {
+  font-size: 14px;
+  padding: 5px;
+}
+
+tr {
+  border-bottom: solid 1px #51C4B4;
+}
+
+.row-table:hover{
+    background-color: #51C4B4;
+    cursor: pointer;
+    color: #041215;
+}
+
+.icones {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+nav {
+  display: flex; 
+  justify-content: space-around; 
+  align-items: center; 
+  background-color: #041215; 
+  color: #BBEEEE; 
+  height: 10vh;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+ul li {
+  
+  margin-left: 20px;
+}
+
+button {
+  background-color: #51C4B4;
+  color: #041215;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #BBEEEE;
+}
+
+button:active {
+  transform: scale(0.8);
+}
+
+footer {
+  background-color: #041215;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.valores-da-estrela {
+    /*color: #DC741F;*/
+    color: #45D8FB;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.valores-do-planeta {
+    color: #45D8FB;
+    transition: opacity 0.3s ease-in-out;
+}
+
+nav img {
+  width: 150px;
+}
+
+sub {
+  font-size: 15px;
+}
+
+tbody {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.filter-bar {
+  border: solid 1px #51C4B4;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 5px;
+  margin-bottom: 5px;
+  color: #BBEEEE;
+  justify-content: space-between;
+  gap: 2px;;
+}
+
+.btn-filter-bar {
+  height: 30px;
+  width: 100%;  
+  transition: all 0.3s;
+  white-space: nowrap;
+  color: #BBEEEE;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.btn-filter-bar button {
+  font-size: 18px;
+  font-weight: bold;
+  width: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-filter-bar button:hover {
+  background-color: #BBEEEE;
+}
+
+.btn-filter-bar button:active {
+  transform: scale(0.8);
+}
+
+.btn-filter-bar button:focus {
+  background-color: #BBEEEE;
+}
+
+@media screen and (max-width: 412px) {
+
+  .div-main {
+    width: 95%;
+  }
+  .btn-filter-bar button {
+    width: 40px;
+  }
+
+  .filter-bar {
+    overflow-x: scroll;
+  }
+
+  #star-name {
+    font-size: 18px;
+  }
+
+  #planet-name {
+    font-size: 18px;
+  }
+    
+  header ul {
+    display: none;
+  }
+
+  footer span {
+    font-size: 10px;
+  }
+
+  .info-star-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab-coluna-mobile {
+    width: 150px;
+  }
+
+  td {
+    font-size: 12px;
+    padding: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  nav img {
+    width: 35%;
+  }
+  
+}
+
+@media screen and (max-width: 375px) {
+
+  td {
+    font-size: 10px;
+  }
+}

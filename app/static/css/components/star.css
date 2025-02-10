@@ -1,0 +1,63 @@
+.star-img-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background-image: url('/img/background/bg_galaxy_small.webp');
+    background-size: cover;
+    background-position: center center;
+    border: solid 1px #19B2FB;*/
+}
+
+.star-img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    margin-right: 5px;
+}
+
+.modelo-padrao {
+    background-color: white;
+}
+
+.red {
+    background: radial-gradient(circle, rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0) 100%);
+    box-shadow: 0 0 10px 0px rgba(255, 0, 0, 0.8);
+}
+
+.orange {
+    background: radial-gradient(circle, rgba(255, 165, 0, 1) 0%, rgba(255, 165, 0, 0.5) 70%,  rgba(0, 0, 0, 0) 100%);
+    box-shadow: 0 0 10px 0px rgba(255, 165, 0, 0.8);
+}
+
+.yellow {
+    background: radial-gradient(circle, rgba(255, 255, 0, 1) 0%, rgba(255, 255, 0, 0.5) 70%, rgba(0, 0, 0, 0) 100%);
+    box-shadow: 0 0 10px 0px rgba(255, 255, 0, 0.8);
+}
+
+.light-yellow {
+    background: radial-gradient(circle, rgba(255, 255, 153, 1) 0%, rgba(255, 255, 153, 0.5) 70%, rgba(0, 0, 0, 0) 100%);
+    box-shadow: 0 0 10px 0px rgba(255, 255, 153, 0.8);
+}
+
+.white {
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 70%, rgba(0, 0, 0, 0) 100%);
+    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.8);
+}
+
+.cyan {
+    background: radial-gradient(circle, rgba(0, 255, 255, 1) 0%, rgba(0, 255, 255, 0.5) 70%, rgba(0, 0, 0, 0) 100%);
+    box-shadow: 0 0 10px 0px rgba(0, 255, 255, 0.8);
+}
+
+.blue {
+    background: radial-gradient(circle, rgba(0, 0, 255, 1) 0%, rgba(0, 0, 255, 0.5) 70%, rgba(0, 0, 0, 0) 100%);
+    box-shadow: 0 0 10px 0px rgba(0, 0, 255, 0.8);
+}
+
+@media screen and (width: 412px) {
+    .star-img {
+        margin-right: 5px;
+    }
+}
+
