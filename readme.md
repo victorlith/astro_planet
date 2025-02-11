@@ -9,9 +9,8 @@ Bem-vindo ao Astro Planet! Esta aplicação web permite que os usuários explore
   - Nome do exoplaneta
   - Estrela hospedeira
   - Distância da Terra
-  - Tamanho e composição
+  - Tamanho
   - Condições atmosféricas
-- Interface amigável e responsiva.
 
 ## Tecnologias Utilizadas
 
