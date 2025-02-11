@@ -5,18 +5,8 @@ let rowsPerPage = 10;
 let currentPage = 1;
 let offset_rows = 0;  
 let filtroAtual = '';
-
-/*const savedPage = parseInt(sessionStorage.getItem('offset_rows'), 10);
-const saveRowPerPage = parseInt(sessionStorage.getItem('rowsPerPage'), 10);
-const saveCurrentPage = parseInt(sessionStorage.getItem('currentPage'), 10);*/
 const alfabeto = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const divBarFilter = document.getElementById('filter-bar');
-
-/*if(savedPage) {
-    offset_rows = parseInt(savedPage, 10);
-    currentPage = saveCurrentPage;
-    rowsPerPage = saveRowPerPage;
-}*/
 
 alfabeto.forEach(item => {
     const divElement = document.createElement('div');
@@ -34,8 +24,6 @@ alfabeto.forEach(item => {
     divBarFilter.appendChild(divElement);
 });
 
-
-
 document.addEventListener('DOMContentLoaded', () =>{
     document.getElementById('btn-atualizar').addEventListener('click', atualizarPagina);
     document.getElementById('reset').addEventListener('click', resetarPagina);
@@ -47,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 async function carregarDadosNaTabela(page, filtro='') {
     const tabela = document.getElementById('tabela');
-    //const data = await listarExoplanetas_v2(offset_rows);
     const data = await filtrarExoplaneta(offset_rows, filtro);
  
     document.getElementById('current-page').textContent =  page + ' - ' + rowsPerPage;
@@ -58,9 +45,6 @@ async function carregarDadosNaTabela(page, filtro='') {
         const row = document.createElement('tr');
         row.onclick = () => {
             carregarDadosExoplaneta(item.pl_name);
-            /*localStorage.setItem('offset_rows', offset_rows);
-            localStorage.setItem('rowsPerPage', rowsPerPage);
-            localStorage.setItem('currentPage', currentPage);*/
         }; 
         row.className = 'row-table';
         row.innerHTML = `<td>${item.pl_name}</td>
@@ -82,7 +66,6 @@ async function carregarDadosNaTabela(page, filtro='') {
         document.getElementById('reset').classList.add('disabled-btn');
     }
 }
-
 
 function randomImg(massa) {
     let img_src = '';
@@ -123,9 +106,6 @@ async function avancarPagina() {
 }
 
 async function resetarPagina() {
-    /*localStorage.removeItem('offset_rows');
-    localStorage.removeItem('currentPage');
-    localStorage.removeItem('rowsPerPage');*/
     rowsPerPage = 10;
     currentPage = 1;
     offset_rows = 0;
@@ -186,14 +166,10 @@ async function carregarDadosExoplaneta(nome) {
         }
         else {
             document.getElementById('star-zona-habitavel').textContent = data.pl_sy_zona_habitavel[0].toFixed(4) + " UA | " + data.pl_sy_zona_habitavel[1].toFixed(4) + " UA";
-
         }
         
         let tipo = data.st_spectype;
         corDaEstrela(tipo);
-
-        /*const massaExoplaneta = parseInt(data.pl_bmasse);
-        document.getElementById('img-exoplanet').src = randomImg(massaExoplaneta);*/
     }
     else {
         alert(`Nenhum planeta foi encontrado com esse nome: ${nome}`);
@@ -249,9 +225,6 @@ async function pesquisarExoplaneta() {
                 const row = document.createElement('tr');
                 row.onclick = () => {
                     carregarDadosExoplaneta(item.pl_name);
-                    /*sessionStorage.setItem('offset_rows', offset_rows);
-                    sessionStorage.setItem('rowsPerPage', rowsPerPage);
-                    sessionStorage.setItem('currentPage', currentPage);*/
                 }; 
                 row.className = 'row-table';
         
@@ -261,11 +234,7 @@ async function pesquisarExoplaneta() {
                 tabelaExoplanetas.appendChild(row);
             });
         }
-        /*else {
-            console.log(data.msg);
-            alert(data.msg);
-        }*/
-        
+
         document.getElementById('prev').classList.add('disabled-btn');
         document.getElementById('reset').classList.add('disabled-btn');
         document.getElementById('next').classList.add('disabled-btn')
